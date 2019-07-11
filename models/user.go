@@ -18,16 +18,16 @@ func init() {
 
 type User struct {
 	Id       string
-	Username string `form:"username"`
-	Password string `form:"password"`
+	Username string
+	Password string
 	Profile  Profile
 }
 
 type Profile struct {
 	Gender  string
-	Age     int    `form:"age"`
-	Address string `form:"address"`
-	Email   string `form:"email"`
+	Age     int
+	Address string
+	Email   string
 }
 
 func AddUser(u User) string {

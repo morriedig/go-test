@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"apiproject/models"
+	"gincowbay/models"
 	"encoding/json"
 
 	"github.com/astaxie/beego"
@@ -20,13 +20,9 @@ type UserController struct {
 // @router / [post]
 func (u *UserController) Post() {
 	var user models.User
-	beego.Debug("this is debug")
-	beego.Debug(user)
 	json.Unmarshal(u.Ctx.Input.RequestBody, &user)
 	uid := models.AddUser(user)
 	u.Data["json"] = map[string]string{"uid": uid}
-	beego.Debug(u)
-	beego.Debug(uid)
 	u.ServeJSON()
 }
 
@@ -120,3 +116,4 @@ func (u *UserController) Logout() {
 	u.Data["json"] = "logout success"
 	u.ServeJSON()
 }
+

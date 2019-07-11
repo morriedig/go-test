@@ -8,7 +8,7 @@
 package routers
 
 import (
-	"apiproject/controllers"
+	"gincowbay/controllers"
 
 	"github.com/astaxie/beego"
 )
@@ -21,9 +21,7 @@ func init() {
 			),
 		),
 		beego.NSNamespace("/user",
-			beego.NSInclude(
-				&controllers.UserController{},
-			),
+			beego.NSRouter("/", &controllers.UserController{}, "*:GetAll"),
 		),
 	)
 	beego.AddNamespace(ns)

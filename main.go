@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "apiproject/routers"
+	_ "gincowbay/routers"
 
 	"github.com/astaxie/beego"
 )

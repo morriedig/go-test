@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"apiproject/models"
+	"gincowbay/models"
 	"encoding/json"
 
 	"github.com/astaxie/beego"
